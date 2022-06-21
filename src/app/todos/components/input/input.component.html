@@ -1,0 +1,9 @@
+<input
+  class="input"
+  placeholder="Create a new todo..."
+  autofocus
+  type="text"
+  [value]="text"
+  (keyup)="updateText($event)"
+  (keyup.enter)="newTodo($event)"
+/>
