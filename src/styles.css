@@ -61,15 +61,17 @@ header .theme-selector img {
   font-size: inherit;
   font-family: inherit;
   background-color: hsl(235, 19%, 25%);
+  box-shadow: 10px 10px 80px black;
 }
 
 .todoapp .app-main-todos {
-  width: 100%;
+  width: 105%;
   border-radius: 6px;
   margin-top: 20px;
   background-color: hsl(235, 19%, 25%);
   padding: 0px;
   margin-right: auto;
+  box-shadow: 10px 10px 50px;
 }
 
 .app-main-todos ul {
@@ -83,21 +85,96 @@ header .theme-selector img {
   align-items: center;
   width: 100%;
   color: hsl(234, 39%, 85%);
-  border-bottom: solid 1px;
-  border-color: #cacde8;
+  border-bottom: solid 1px grey;
+
   font-size: inherit;
+  position: relative;
 }
 
 .todo label {
   margin-left: 50px;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+input[type="checkbox"] {
+  opacity: 0;
+  height: 16px;
+  width: 17px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: auto;
 }
 
-.todo input[type="checkbox"] {
+input[type="checkbox"] + label {
+  z-index: 1;
+  width: 5px;
+  height: 5px;
   margin-left: 20px;
-  cursor: pointer;
-  background-image: url(/assets/icon-check.svg);
+  margin-right: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 100px;
 }
+input[type="checkbox"]:checked + label {
+  z-index: 1;
+  width: 5px;
+  height: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-image: linear-gradient(to bottom right, #add8e6, #6a0dad);
+  margin-top: auto;
+  margin-bottom: auto;
+  border: none;
+  padding: 10px;
+  border-radius: 100px;
+}
+
 input:focus {
   outline: none;
+}
+
+.check {
+  position: absolute;
+  z-index: 1;
+  width: 10px;
+  height: auto;
+}
+
+.app-main-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-main-footer div {
+  color: hsl(234, 11%, 52%);
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+.app-main-footer .clear:hover {
+  color: hsl(234, 39%, 85%);
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+}
+
+.filters p {
+  margin: 10px;
+}
+
+.filters p:hover {
+  color: hsl(234, 39%, 85%);
+  cursor: pointer;
 }

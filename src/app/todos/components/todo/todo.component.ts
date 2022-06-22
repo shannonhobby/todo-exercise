@@ -8,4 +8,10 @@ import { TodoInterface } from '../../types/todo.interface';
 })
 export class TodoComponent {
   @Input('todo') todoProps: TodoInterface;
+
+  constructor(private todosService: TodosService) {}
+
+  checkTodo(id: string, completed: boolean): void {
+    this.todosService.checkTodo(id, completed);
+  }
 }

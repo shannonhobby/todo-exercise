@@ -1,0 +1,9 @@
+<div *ngIf="incompleteTodos$ | async as incompleteTodos">
+  {{ incompleteTodos.length }} items left
+</div>
+<div class="filters">
+  <p (click)="changeFilter('all')">All</p>
+  <p (click)="changeFilter('active')">Active</p>
+  <p (click)="changeFilter('completed')">Completed</p>
+</div>
+<div (click)="clearCompleted($event)" class="clear">Clear Completed</div>

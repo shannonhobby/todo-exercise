@@ -1,7 +1,8 @@
 <ul>
   <app-main-todo
     class="todo"
-    *ngFor="let todo of todos$ | async"
+    *ngFor="let todo of visibleTodos$ | async"
     [todo]="todo"
   ></app-main-todo>
 </ul>
+<app-main-footer class="app-main-footer"></app-main-footer>

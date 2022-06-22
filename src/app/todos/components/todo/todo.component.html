@@ -1,7 +1,9 @@
 <input
-  name="completed"
+  id="completed"
   class="custom-checkbox"
   type="checkbox"
   [checked]="todoProps.isComplete"
+  (change)="checkTodo(todoProps.id, !todoProps.isComplete)"
 />
-<label for="completed">{{ todoProps.todo }}</label>
+<label for="completed"></label>
+<p>{{ todoProps.todo }}</p>
